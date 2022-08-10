@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Product preview card component</title>
 
@@ -18,6 +17,10 @@
       .attribution {
         font-size: 11px;
         text-align: center;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -27,11 +30,17 @@
   <body>
     <main>
       <section class="product-card">
-        <img
-          class="product-card_image"
-          src="images/image-product-desktop.jpg"
-          alt=""
-        />
+        <picture class="product-card_image">
+          <source
+            srcset="images/image-product-mobile.jpg"
+            media="(max-width: 660px)"
+          />
+          <img
+            class="product-card_image"
+            src="images/image-product-desktop.jpg"
+            alt="Gabrielle Essence Eau De Parfum"
+          />
+        </picture>
         <article class="product-card_meta">
           <p>Perfume</p>
           <h1>Gabrielle Essence Eau De Parfum</h1>
@@ -42,12 +51,10 @@
           <p class="product-card_meta_price">
             <span>$149.99</span><span>$169.99</span>
           </p>
-        </article>
-        <div class="product-card_action">
-          <button>
+          <button class="product-card_action">
             <img src="images/icon-cart.svg" alt="cart" />Add to Cart
           </button>
-        </div>
+        </article>
       </section>
     </main>
 
